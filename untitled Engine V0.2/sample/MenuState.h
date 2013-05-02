@@ -4,6 +4,7 @@
 #include "GameState.h"
 #include "Images.h"
 #include "Input.h"
+#include  "FontRenderer.h"
 class MenuState :
 	public GameState
 {

@@ -1,10 +1,9 @@
 #pragma once
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
+
+#include <SDL_ttf.h>
 #include <string>
-#include <GL/gl.h>
-#include <GL/glu.h>
+#include "AppGameState.h"
 #include <stdexcept>
 
 using std::string;

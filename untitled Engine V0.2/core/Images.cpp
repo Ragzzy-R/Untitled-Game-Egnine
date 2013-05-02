@@ -35,16 +35,20 @@ int Images::loadImage(const char* filename) {
 		if(bpp == 2)
 			colorFormat = GL_LUMINANCE_ALPHA;
 
-		glTexImage2D(GL_TEXTURE_2D, 0, colorFormat, TextureImage->w, TextureImage->h, 0, colorFormat, GL_UNSIGNED_BYTE,TextureImage->pixels); 
+		glTexImage2D(GL_TEXTURE_2D, 0, colorFormat,TextureImage->w, TextureImage->h, 0, colorFormat, GL_UNSIGNED_BYTE,TextureImage->pixels); 
 
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 	}
 
+
+
     if (TextureImage)
 	    SDL_FreeSurface(TextureImage);
 	return 0;
 }
+
+
 
 
 /*=======================================================================
@@ -76,21 +80,7 @@ int Images::drawImage(float x,float y,int width,int height) {
 	return 0;
 }
 
-//function under construction dont use it now.
-int	Images::drawSubImage(float x,float y,float w,float h,float xpos,float ypos) {
-	float fx = 1.0 / (float)imageWidth;
-	float fy = 1.0 / (float)imageHeight;
-	
-	glBindTexture(GL_TEXTURE_2D, m_handler);
-	glBegin(GL_QUADS);
-	glTexCoord2f((float)(x + 0) * fx, (float)(y + h) * fy); glVertex3f(xpos + 0, ypos + h, 0.0f);
-	glTexCoord2f((float)(x + w) * fx, (float)(y + h) * fy); glVertex3f(xpos + w, ypos + h, 0.0f);
-	glTexCoord2f((float)(x + w) * fx, (float)(y + 0) * fy); glVertex3f(xpos + w, ypos + 0, 0.0f);
-	glTexCoord2f((float)(x + 0) * fx, (float)(y + 0) * fy); glVertex3f(xpos + 0, ypos + 0, 0.0f);
-	glEnd();
 
-	return 0;
-}
 
 
 Images::~Images(void)

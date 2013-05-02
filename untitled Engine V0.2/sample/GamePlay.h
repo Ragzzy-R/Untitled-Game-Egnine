@@ -2,16 +2,18 @@
 #pragma once
 #include "GameState.h"
 #include "AppGameState.h"
-#include "Images.h"
 #include "Input.h"
+#include "Animation.h"
 class GamePlay :
 	public GameState
 {
 public:
 	GamePlay(void);
 	char* key;
+	char* FPS;
 	Images ss;
-	Images man;
+	Animation man;
+	Animation man1;
 	int x;
 	Input userPressed;
 	void init(AppGameState* apg);
