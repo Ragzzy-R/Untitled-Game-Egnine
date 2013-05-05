@@ -34,7 +34,7 @@ int SpriteSheet::loadSprite(const char* filename) {
 	return 0;
 }
 
-int SpriteSheet::drawfromSprite(float x,float y,float sw,float sh,float xpos,float ypos,float dw,float dh) {
+int SpriteSheet::drawfromSprite(int x,int y,int sw,int sh,int xpos,int ypos,int dw,int dh) {
 float fx = 1.0 / (float)imageWidth;
 	float fy = 1.0 / (float)imageHeight;
 	glEnable(GL_BLEND);

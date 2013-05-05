@@ -15,9 +15,9 @@ public:
 	int    loadImage(const char* filename);
 
 	int    drawImage(float x,float y,int width,int height);
-	float imageWidth;
+	int imageWidth;
 		SDL_Surface* TextureImage;
-	float imageHeight;
+	int imageHeight;
 	~Images(void);
 };
 

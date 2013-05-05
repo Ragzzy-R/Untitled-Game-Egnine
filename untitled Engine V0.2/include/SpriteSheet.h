@@ -6,7 +6,7 @@ class SpriteSheet :
 public:
 	SpriteSheet(void);
 	int loadSprite(const char* fname);
-	int drawfromSprite(float x,float y,float sw,float sh,float xpos,float ypos,float dw,float dh);
+	int drawfromSprite(int x,int y,int sw,int sh,int xpos,int ypos,int dw,int dh);
 	~SpriteSheet(void);
 };
 

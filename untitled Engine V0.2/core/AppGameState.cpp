@@ -138,7 +138,10 @@ bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag
     if ( videoInfo->blit_hw )
 
 	videoFlags |= SDL_HWACCEL;
-
+	
+	SDL_Surface* icon = SDL_LoadBMP("logo.bmp");
+	SDL_WM_SetIcon(icon, NULL);
+	SDL_WM_SetCaption( "Untitled Engine V0.2", NULL ); 
     /* Sets up OpenGL double buffering */
     SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );
     if((surfDisplay = SDL_SetVideoMode(width,height,32,videoFlags)) == NULL) {
