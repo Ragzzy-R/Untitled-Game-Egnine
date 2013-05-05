@@ -8,8 +8,8 @@ GamePlay::GamePlay(void)
 }
 void GamePlay::init(AppGameState *apg){
 	GameState::init(apg);
-	ss.loadImage("tetris/THEME_1_BG_1.png");
-	man.loadSprite("tetris/daff.png");
+	ss.loadImage("./tetris/THEME_1_BG_1.png");
+	man.loadSprite("./tetris/daff.png");
 	man.addframe(148,0,40,79);
 	man.addframe(189,0,40,79);
 	man.addframe(0,79,40,79);
@@ -29,12 +29,13 @@ void GamePlay::init(AppGameState *apg){
 }
 
 void GamePlay::render() {
-	
-
 	ss.drawImage(0,0,m_apg->containerWidth,m_apg->containerHeight);
 	man.drawAnimation(300,300,80,160);
-	fontRenderer.printWithShadow("Press 'P' to pause and R to resart daffy",24,55, 0xFF4040);
-	fontRenderer.printWithShadow("Press 'S' to stop him",24,105, 0xFF4040);
+
+	fontRenderer.setColor(0xFF4040);
+	fontRenderer.printWithShadow("Press 'P' to pause and R to resart daffy",24,55);
+	fontRenderer.printWithShadow("Press 'S' to stop him",24,105);
+
 	man.frameDelay(40);
 	
 	

@@ -13,11 +13,10 @@ public:
 	Images(void);
 	GLuint m_handler;
 	int    loadImage(const char* filename);
-
 	int    drawImage(float x,float y,int width,int height);
 	float imageWidth;
-		SDL_Surface* TextureImage;
 	float imageHeight;
+	int	drawSubImage(float x,float y,float width,float height,float xpos,float ypos) ;
 	~Images(void);
 };
 

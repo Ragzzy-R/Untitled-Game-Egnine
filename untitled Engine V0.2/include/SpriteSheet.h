@@ -1,5 +1,5 @@
 #pragma once
-#include "images.h"
+#include "Images.h"
 class SpriteSheet :
 	public Images
 {

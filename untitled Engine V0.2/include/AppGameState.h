@@ -34,7 +34,7 @@ public:
 	static int containerHeight;
 	int videoFlags;
 	long frames;
-	static long FPS;
+	long FPS;
 	long startTime;
 	long currentTime;
 	bool resizeWindow(int,int,bool);
