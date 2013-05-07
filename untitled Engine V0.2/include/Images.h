@@ -16,9 +16,15 @@ public:
 	int    drawImage(float x,float y,int width,int height);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	int imageWidth;
 		SDL_Surface* TextureImage;
 	int imageHeight;
+=======
+	float imageWidth;
+	float imageHeight;
+	int	drawSubImage(float x,float y,float width,float height,float xpos,float ypos) ;
+>>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
 =======
 	float imageWidth;
 	float imageHeight;
