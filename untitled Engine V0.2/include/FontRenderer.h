@@ -1,31 +1,19 @@
 #pragma once
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_opengl.h>
 #include <string>
 #include <gl/GL.h>
 #include <gl/GLU.h>
-=======
-=======
->>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
-=======
->>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
+#include <SDL.h>
+#include <SDL_ttf.h>
 #include <string>
 #include <GL/gl.h>
 #include <GL/glu.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
-=======
->>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
-=======
->>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
 #include <stdexcept>
 
 using std::string;
