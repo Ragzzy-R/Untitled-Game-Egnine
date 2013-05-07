@@ -12,9 +12,8 @@ int main(int argc, char* argv[]) {
 	apg.addState("MainState", &gp);
 	apg.addState("MenuState", &ms);
 	apg.changeState("MenuState");
-	fontRenderer.init("budmo jiggler.ttf", 30);
-	//apg.currentState(1);
+	fontRenderer.init("UpheavalPro.ttf", 16);
 	return apg.start();
 
 }
-	
+

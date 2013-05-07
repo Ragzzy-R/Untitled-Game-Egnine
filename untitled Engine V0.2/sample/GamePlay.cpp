@@ -8,8 +8,8 @@ GamePlay::GamePlay(void)
 }
 void GamePlay::init(AppGameState *apg){
 	GameState::init(apg);
-	ss.loadImage("tetris/THEME_1_BG_1.png");
-	man.loadSprite("tetris/daff.png");
+	ss.loadImage("./tetris/THEME_1_BG_1.png");
+	man.loadSprite("./tetris/daff.png");
 	man.addframe(148,0,40,79);
 	man.addframe(189,0,40,79);
 	man.addframe(0,79,40,79);
