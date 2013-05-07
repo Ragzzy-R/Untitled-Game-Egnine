@@ -16,9 +16,12 @@ void MenuState::init(AppGameState *apg){
 void MenuState::render() {
 	ss.drawImage(0,0,m_apg->containerWidth,m_apg->containerHeight);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	fontRenderer.printWithShadow("PRESS ENTER TO CONTINUE",240,550);
 	
 	fontRenderer.printWithShadow("§ Untitled Engine §!", 260, 220);
+=======
+>>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
 =======
 >>>>>>> bbb1d59beee851fe9fb835c5dcaa1e1df6abdf1d
 
