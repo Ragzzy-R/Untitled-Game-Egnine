@@ -1,12 +1,10 @@
 
-
 #include "AppGameState.h"
 #include <iostream>
 
 bool AppGameState::doneWithGame;
 int AppGameState::containerHeight;
 int AppGameState::containerWidth;
-long AppGameState::FPS;
 
 AppGameState::AppGameState(void)
 {
@@ -64,7 +62,6 @@ int AppGameState::start() {
 		//std::cout<<"The current time is :" << currentTime << std::endl;
 		if(currentTime - startTime > 1000) { // 1000 milisec = 1 sec
 			FPS = frames; // Use this FPS value.
-
 			frames = 0;
 			startTime = currentTime;
 		}
@@ -93,7 +90,7 @@ bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag
 	  //MessageBox(NULL,(LPCWSTR)L"SDL initialization Failed:",(LPCWSTR)L"Untitled Engine",MB_ICONERROR | MB_OK);
 	    exit(1);
 	}
-	SDL_GL_SetAttribute( SDL_GL_SWAP_CONTROL, 1 );
+	SDL_GL_SetAttribute( SDL_GL_SWAP_CONTROL, 0 );
 	SDL_GL_SetAttribute(SDL_GL_RED_SIZE,    	    8);
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,  	    8);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,   	    8);
@@ -125,9 +122,9 @@ bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag
     videoFlags  = SDL_OPENGL;          /* Enable OpenGL in SDL */
     videoFlags |= SDL_GL_DOUBLEBUFFER; /* Enable double buffering */
     videoFlags |= SDL_HWPALETTE;       /* Store the palette in hardware */
-    //videoFlags |= SDL_RESIZABLE;       /* Enable window resizing */
+   // videoFlags |= SDL_RESIZABLE;       /* Enable window resizing */
 	if(fullscreenFlag) 
-		videoFlags |= SDL_FULLSCREEN;
+		//videoFlags |= SDL_FULLSCREEN;
     /* This checks to see if surfaces can be stored in memory */
     if ( videoInfo->hw_available )
 	videoFlags |= SDL_HWSURFACE;
@@ -138,13 +135,10 @@ bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag
     if ( videoInfo->blit_hw )
 
 	videoFlags |= SDL_HWACCEL;
-	
-	SDL_Surface* icon = SDL_LoadBMP("logo.bmp");
-	SDL_WM_SetIcon(icon, NULL);
-	SDL_WM_SetCaption( "Untitled Engine V0.2", NULL ); 
+
     /* Sets up OpenGL double buffering */
     SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );
-    if((surfDisplay = SDL_SetVideoMode(width,height,32,videoFlags)) == NULL) {
+    if((surfDisplay = SDL_SetVideoMode(800,600,32,videoFlags)) == NULL) {
         return false;
     }
 	
@@ -169,7 +163,7 @@ bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag
     glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_TEXTURE_2D);
 	glClearDepth( 1.0f );
-	glDisable( GL_DEPTH_TEST );
+	glEnable( GL_DEPTH_TEST );
 	glDepthFunc( GL_LEQUAL );
 	glHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
 	glLoadIdentity();

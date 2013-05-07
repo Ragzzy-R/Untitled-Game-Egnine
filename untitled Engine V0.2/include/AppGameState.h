@@ -13,8 +13,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_opengl.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
+#include <gl/gl.h>
+#include <gl/glu.h>
 #include <map>
 
 
@@ -34,7 +34,7 @@ public:
 	static int containerHeight;
 	int videoFlags;
 	long frames;
-	static long FPS;
+	long FPS;
 	long startTime;
 	long currentTime;
 	bool resizeWindow(int,int,bool);

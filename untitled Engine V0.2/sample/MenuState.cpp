@@ -16,9 +16,9 @@ void MenuState::render() {
 
 
 	ss.drawImage(0,0,m_apg->containerWidth,m_apg->containerHeight);
-	fontRenderer.printWithShadow("PRESS ENTER TO CONTINUE",240,550, 0xFF4040);
-	fontRenderer.printWithShadow(" ",16,90,0xFF1493);
-	fontRenderer.printWithShadow("§ Untitled Engine §!", 260, 220, 0xADFF2F);
+	fontRenderer.printWithShadow("PRESS ENTER TO CONTINUE",240,550);
+	
+	fontRenderer.printWithShadow("§ Untitled Engine §!", 260, 220);
 
 
 }

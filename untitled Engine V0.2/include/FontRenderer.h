@@ -1,9 +1,11 @@
 #pragma once
 
-
+#include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_opengl.h>
 #include <string>
-#include "AppGameState.h"
+#include <gl/GL.h>
+#include <gl/GLU.h>
 #include <stdexcept>
 
 using std::string;
@@ -34,16 +36,19 @@ public:
 		int width;
 	};
 
-	void print(string str, float x, float y, int color, bool shadow = false);
-	void printWithShadow(string str, float x, float y, int color);
+	void print(string str, float x, float y, bool shadow = false);
+	void printWithShadow(string str, float x, float y);
 
 	int getStringWidth(string str);
 	int getFontHeight();
 
+	void setColor(String colorName);
+	void setColor(int colorHex);
 	
 private:
 	void renderChar(int c);
 	void createFontTexture(TTF_Font* Font);
+	void registerColorNames();
 
 	unsigned char* fontTextureData;
 	int charSize;
@@ -53,6 +58,8 @@ private:
 
 	Characher chars[256];
 	wstring allowedChars;
+
+	int baseColor;
 
 	unsigned int fontTextureID;
 	int textureHeight;
