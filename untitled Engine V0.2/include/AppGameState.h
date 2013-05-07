@@ -42,7 +42,7 @@ public:
 	void changeState(String stateName);
 	void getDimension(int,int);
 	int start();
-	bool initializeEverything(int width,int height,bool fullscreenFlag);
+	bool initializeEverything(const char* title,int width,int height,bool fullscreenFlag);
 	GameStateMap m_mapStates;
 	~AppGameState(void);
 };

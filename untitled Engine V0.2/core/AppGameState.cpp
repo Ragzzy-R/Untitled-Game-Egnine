@@ -82,7 +82,7 @@ int AppGameState::start() {
    created on  : 07/04/2013                                             
    Last Edited : 27/04/2013                                             
  =======================================================================*/
-bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag) {
+bool AppGameState::initializeEverything(const char* title,int width,int height,bool fullscreenFlag) {
 	
 	 /* initialize SDL */
     if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
@@ -135,7 +135,7 @@ bool AppGameState::initializeEverything(int width,int height,bool fullscreenFlag
     if ( videoInfo->blit_hw )
 
 	videoFlags |= SDL_HWACCEL;
-
+	SDL_WM_SetCaption(title,NULL);
     /* Sets up OpenGL double buffering */
     SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );
     if((surfDisplay = SDL_SetVideoMode(800,600,32,videoFlags)) == NULL) {
