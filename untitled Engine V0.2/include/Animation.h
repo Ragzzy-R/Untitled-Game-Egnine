@@ -14,6 +14,7 @@ public:
 	void restart();
 	void stop();
 	void frameDelay(long);
+	int  rotateAnimation(float angle);
 	//int loadSprite(const char*);
 		typedef struct {
 		int x;
@@ -26,5 +27,7 @@ private:
 		std::vector<AnimRect> dimensionTable;
 		bool isPaused;
 		bool isAnimated;
-	
+		long currentTime;
+		long startTime;
+		long timeElapsed;
 };

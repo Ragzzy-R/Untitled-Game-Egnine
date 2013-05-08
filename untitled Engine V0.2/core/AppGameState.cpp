@@ -124,7 +124,7 @@ bool AppGameState::initializeEverything(const char* title,int width,int height,b
     videoFlags |= SDL_HWPALETTE;       /* Store the palette in hardware */
    // videoFlags |= SDL_RESIZABLE;       /* Enable window resizing */
 	if(fullscreenFlag) 
-		//videoFlags |= SDL_FULLSCREEN;
+		videoFlags |= SDL_FULLSCREEN;
     /* This checks to see if surfaces can be stored in memory */
     if ( videoInfo->hw_available )
 	videoFlags |= SDL_HWSURFACE;

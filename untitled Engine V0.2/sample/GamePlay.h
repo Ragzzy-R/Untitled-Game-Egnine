@@ -12,6 +12,7 @@ public:
 	char* key;
 	char* FPS;
 	Images ss;
+	float angle;
 	Animation man;
 	Animation man1;
 	int x;

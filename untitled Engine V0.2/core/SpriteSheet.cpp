@@ -3,6 +3,7 @@
 
 SpriteSheet::SpriteSheet(void)
 {
+	rotAngle = 0;
 }
 int SpriteSheet::loadSprite(const char* filename) {
 	
@@ -35,10 +36,16 @@ int SpriteSheet::loadSprite(const char* filename) {
 }
 
 int SpriteSheet::drawfromSprite(int x,int y,int sw,int sh,int xpos,int ypos,int dw,int dh) {
-float fx = 1.0 / (float)imageWidth;
+
+	float fx = 1.0 / (float)imageWidth;
 	float fy = 1.0 / (float)imageHeight;
+	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+	glPushMatrix();
+	glTranslatef((xpos+(dw/2)),(ypos+(dh/2)),0.0f);
+	glRotatef(rotAngle,0.0f,0.0f,1.0f);
+	glTranslatef(-(xpos+(dw/2)),-(ypos+(dh/2)),0.0f);
 	glBindTexture(GL_TEXTURE_2D, m_handler);
 	glBegin(GL_QUADS);
 	glTexCoord2f((float)(x + 00) * fx, (float)(y + sh) * fy); glVertex3f(xpos + 00, ypos + dh, 0.0f);
@@ -47,6 +54,12 @@ float fx = 1.0 / (float)imageWidth;
 	glTexCoord2f((float)(x + 00) * fx, (float)(y + 00) * fy); glVertex3f(xpos + 00, ypos + 00, 0.0f);
 	glEnd();
 	glDisable(GL_BLEND); 
+	glPopMatrix();
+	return 0;
+}
+
+int SpriteSheet::rotateSprite(float angle) {
+	rotAngle = angle;
 	return 0;
 }
 

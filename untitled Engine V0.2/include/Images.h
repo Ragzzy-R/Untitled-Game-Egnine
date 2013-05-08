@@ -14,13 +14,13 @@ public:
 	GLuint m_handler;
 	int    loadImage(const char* filename);
 	int    drawImage(float x,float y,int width,int height);
- 
- 
- 
 	int imageWidth;
 	SDL_Surface* TextureImage;
 	int imageHeight;
-	int	drawSubImage(float x,float y,float width,float height,float xpos,float ypos) ;
+	int rotateImage(float angle);
 	~Images(void);
+private:
+	float rotAngle;
+	bool rotateEnabled;
 };
 
