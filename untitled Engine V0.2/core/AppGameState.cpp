@@ -49,26 +49,22 @@ int AppGameState::start() {
 	startTime = SDL_GetTicks();
 	frames=0;
 	while(!doneWithGame) {
+	
 		currState->update();
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glLoadIdentity();
-
 		currState->render();
-
-		frames++;
-
-	    	//std::cout << "The start is :" << startTime << std::endl;
-		currentTime = SDL_GetTicks();
-		//std::cout<<"The current time is :" << currentTime << std::endl;
-		if(currentTime - startTime > 1000) { // 1000 milisec = 1 sec
-			FPS = frames; // Use this FPS value.
-			frames = 0;
-			startTime = currentTime;
+		if(t.UEDelay(1000)) {
+		FPS = frames; // Use this FPS value.
+		frames = 0;
 		}
+		frames++;
+	//std::cout << "The start is :" << startTime << std::endl;
 		
+		string Fps = u.toString(FPS);
+		fontRenderer.printWithShadow(Fps,30,30);
 		SDL_GL_SwapBuffers();
 		//std::cout << "The FPS is :" << FPS << std::endl;
-		
 	
 	}
 	
@@ -90,7 +86,8 @@ bool AppGameState::initializeEverything(const char* title,int width,int height,b
 	  //MessageBox(NULL,(LPCWSTR)L"SDL initialization Failed:",(LPCWSTR)L"Untitled Engine",MB_ICONERROR | MB_OK);
 	    exit(1);
 	}
-	SDL_GL_SetAttribute( SDL_GL_SWAP_CONTROL, 0 );
+	//
+	//SDL_GL_SetAttribute( SDL_GL_SWAP_CONTROL, 0 );
 	SDL_GL_SetAttribute(SDL_GL_RED_SIZE,    	    8);
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,  	    8);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,   	    8);

@@ -13,10 +13,12 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_opengl.h>
+#include "FontRenderer.h"
 #include <gl/gl.h>
 #include <gl/glu.h>
 #include <map>
-
+#include "Timer.h"
+#include "Util.h"
 
 
 typedef std::map<String, GameState*> GameStateMap;
@@ -35,6 +37,8 @@ public:
 	int videoFlags;
 	long frames;
 	long FPS;
+	Util u;
+	Timer t;
 	long startTime;
 	long currentTime;
 	bool resizeWindow(int,int,bool);

@@ -1,6 +1,7 @@
 #pragma once
 #include "SpriteSheet.h"
 #include <vector>
+#include "Timer.h"
 class Animation :
 	public SpriteSheet
 {
@@ -13,9 +14,9 @@ public:
 	void pause(bool);
 	void restart();
 	void stop();
+	Timer t;
 	void frameDelay(long);
 	int  rotateAnimation(float angle);
-	//int loadSprite(const char*);
 		typedef struct {
 		int x;
 		int y;

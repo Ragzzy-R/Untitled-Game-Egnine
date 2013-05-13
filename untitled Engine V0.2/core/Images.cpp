@@ -65,9 +65,9 @@ int Images::loadImage(const char* filename) {
  =======================================================================*/
 int Images::drawImage(float x,float y,int width,int height) {
 	glPushMatrix();
-	glTranslatef(width/2,height/2,-1.0f);
+	glTranslatef(x+(width/2),y+(height/2),-1.0f);
 	glRotatef(rotAngle,0.0f,0.0f,1.0f);
-	glTranslatef(-(width/2),-(height/2),1.0f);
+	glTranslatef(-(x+(width/2)),-(y+(height/2)),1.0f);
 	glBindTexture(GL_TEXTURE_2D, m_handler);
 	glEnable (GL_BLEND);
 	glBlendFunc (GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
